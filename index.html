@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Believefb | Luxury Travel Club & Exclusive LATAM Rentals</title>
+    <meta name="description" content="Believefb is the ultimate luxury travel club. Book exclusive villas in Mexico, Brazil, and Colombia via Stays.net, luxury yachts, private jets, and elite hotels worldwide." />
+    <meta name="keywords" content="luxury travel, exclusive villas latam, stays.net rentals, private yacht charter, elite travel club, believefb, luxury hotels, private jets" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0047AB" />
+        <meta name="google" content="notranslate">
+<link rel="canonical" id="canonical" href="https://believefb.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" id="og-title" content="Believefb | Luxury Travel & Exclusive LATAM Rentals" />
+    <meta property="og:description" id="og-desc" content="Join the most exclusive travel club. Luxury villas, yachts, and unique experiences in Latin America and beyond." />
+    <meta property="og:site_name" content="Believefb" />
+    <meta property="og:url" content="https://believefb.com/" />
+    <meta property="og:image" content="./assets/logo.svg" />
+
+    <!-- X (formerly Twitter) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="tw-title" content="Believefb | Luxury Travel Club" />
+    <meta name="twitter:description" id="tw-desc" content="Book your next elite experience. Exclusive access to luxury rentals and services." />
+    <meta name="twitter:image" content="./assets/logo.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+    
+        <link rel="manifest" href="./manifest.webmanifest">
+<!-- CSS Dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./src/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Believefb",
+        "url": "https://believefb.com/",
+        "logo": "./assets/logo.svg",
+        "sameAs": [
+          "https://instagram.com/believefb",
+          "https://x.com/believefb"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://believefb.com/",
+        "name": "Believefb Travel & Luxury",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://believefb.com/#/buscar?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:site" content="@believefb" />
+    <meta name="twitter:creator" content="@believefb" />
+</head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-lg border-bottom border-primary border-opacity-10">
+      <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#/" aria-label="Believefb Inicio">
+          <img src="./assets/logo.svg" alt="Believefb Logo" width="40" height="40" class="d-inline-block align-text-top rounded-circle border border-primary border-opacity-25 shadow-sm">
+          <span translate="no">Believefb</span>
+        </a>
+        
+        <button class="btn btn-outline-light rounded-pill px-4 d-none d-md-block" onclick="renderSearchOverlay()" aria-label="Buscar experiencias">
+          <i class="fas fa-search me-2"></i>Buscar experiencias...
+        </button>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center gap-2">
+            <li class="nav-item"><a class="nav-link px-3" href="#/">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#/yates">Yates</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#/villas">Villas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#/vuelos">Vuelos</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#/cruceros">Cruceros</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#/autos">Autos</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#/hoteles">Hoteles</a></li>
+            <li class="nav-item d-md-none"><a class="nav-link px-3" href="#/buscar">Buscar</a></li>
+            <li class="nav-item ms-lg-3" id="nav-auth">
+              <div class="d-flex align-items-center gap-2">
+                <a id="nav-login" class="btn btn-primary rounded-pill px-4" href="#/login">Entrar</a>
+                <a id="nav-register" class="btn btn-outline-primary rounded-pill px-4" href="#/registro">Unirse</a>
+                <a id="nav-profile" class="btn btn-light rounded-pill px-4" href="#/perfil" style="display:none">Mi Perfil</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="container py-4">
+      <section id="content"></section>
+
+    <!-- Virtual Assistant Widget -->
+    <div id="chat-widget">
+      <div id="chat-window">
+        <div id="chat-header">
+          <img src="./assets/bot-avatar.svg" alt="Believefb AI" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+          <div id="chat-header-info">
+            <h6><span translate="no">Asistente Believefb</span></h6>
+            <span>En línea - 24/7</span>
+          </div>
+          <button class="btn btn-link text-white ms-auto p-0" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chat-feedback-tabs">
+          <div class="chat-tab active" id="tab-chat">Chat Ayuda</div>
+          <div class="chat-tab" id="tab-feedback">Comentarios</div>
+        </div>
+        <div id="chat-messages">
+          <div class="message bot">
+            ¡Hola! Soy tu asistente de Believefb. ¿En qué puedo ayudarte hoy? Puedes preguntarme sobre nuestras villas, yates o cómo funcionan los puntos.
+          </div>
+        </div>
+        <div id="chat-input-area">
+          <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+          <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+      <button id="chat-toggle" onclick="toggleChat()">
+        <i class="fas fa-comment-dots"></i>
+      </button>
+    </div>
+
+    </main>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <h5 class="fw-bold mb-4 text-primary" translate="no">Believefb</h5>
+            <p class="text-white-50 small mb-4">El club de viajes de lujo más exclusivo del mundo. Redefiniendo la hospitalidad y la libertad en cada destino.</p>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white-50 hover-white"><i class="fab fa-instagram fs-5"></i></a>
+              <a href="#" class="text-white-50 hover-white"><i class="fab fa-facebook fs-5"></i></a>
+              <a href="#" class="text-white-50 hover-white"><i class="fab fa-linkedin fs-5"></i></a>
+              <a href="#" class="text-white-50 hover-white"><i class="fab fa-x-twitter fs-5"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold mb-4">Explorar</h6>
+            <ul class="list-unstyled small text-white-50">
+              <li class="mb-2"><a href="#/villas" class="text-reset text-decoration-none">Villas de Lujo</a></li>
+              <li class="mb-2"><a href="#/yates" class="text-reset text-decoration-none">Yates Premium</a></li>
+              <li class="mb-2"><a href="#/vuelos" class="text-reset text-decoration-none">Vuelos Privados</a></li>
+              <li class="mb-2"><a href="#/hoteles" class="text-reset text-decoration-none">Hoteles 5 Estrellas</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="fw-bold mb-4">Anfitriones</h6>
+            <ul class="list-unstyled small text-white-50">
+              <li class="mb-2"><a href="#/ser-anfitrion" class="text-reset text-decoration-none">Publicar mi activo</a></li>
+              <li class="mb-2"><a href="#/ser-anfitrion" class="text-reset text-decoration-none">Cómo funciona</a></li>
+              <li class="mb-2"><a href="#/ser-anfitrion" class="text-reset text-decoration-none">Calculadora de ingresos</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h6 class="fw-bold mb-4">Newsletter VIP</h6>
+            <p class="text-white-50 small mb-3">Recibe ofertas secretas y nuevas aperturas de destinos.</p>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control bg-secondary bg-opacity-10 border-secondary text-white small" placeholder="Tu correo electrónico">
+              <button class="btn btn-primary btn-sm px-4 fw-bold">Unirse</button>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 border-secondary border-opacity-25">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="small text-white-50 mb-0">&copy; 2026 Believefb Travel & Luxury. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <ul class="list-inline mb-0 small">
+              <li class="list-inline-item me-3"><a href="#/privacidad" class="text-white-50 text-decoration-none">Privacidad</a></li>
+              <li class="list-inline-item me-3"><a href="#/terminos" class="text-white-50 text-decoration-none">Términos</a></li>
+              <li class="list-inline-item"><a href="#/cookies" class="text-white-50 text-decoration-none">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/data.js" type="module"></script>
+    <script src="./src/gds/sabre.js" type="module"></script>
+    <script src="./src/microsoft/azure.js" type="module"></script>
+    <script src="./src/microsoft/powerbi.js" type="module"></script>
+    <script src="./src/safety/trustflight.js" type="module"></script>
+    <script src="./src/integrations/stays.js" type="module"></script>
+    <script src="./src/backend/aspnet.js" type="module"></script>
+    <script src="./src/auth.js" type="module"></script>
+    <script src="./src/api.js" type="module"></script>
+    <script src="./src/seo-agent.js" type="module"></script>
+        <!-- Google Maps API for Leaflet Integration -->
+    
+    
+    
+    <!-- Google Maps API for Leaflet Integration -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTF6jPijTqfvxXBFGnDXVmSyyalP1WnpE&libraries=places"></script>
+    
+        <!-- Google Maps & Leaflet Integration -->
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
+    <script src="./src/spa.js" type="module"></script>
+  </body>
+  </html>
